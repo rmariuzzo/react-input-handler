@@ -1,11 +1,11 @@
 {
   "env": {
     "test": {
-      "presets": ["es2015"],
+      "presets": ["es2015", "react"],
       "plugins": ["syntax-object-rest-spread", "transform-object-rest-spread"]
     },
     "production": {
-      "presets": ["es2015-rollup"],
+      "presets": ["es2015-rollup", "react"],
       "plugins": ["syntax-object-rest-spread", "transform-object-rest-spread"]
     }
   }
