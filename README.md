@@ -6,7 +6,7 @@
 
 </div>
 
-# Installation
+## Installation
 
 ```shell
 yarn add react-input-handler
@@ -18,14 +18,14 @@ or
 npm install react-inpu-handler --save
 ```
 
-# Usage
+## Usage
 
 Two things needs to be done to use **react-input-handler**:
 
   1. Create a bound function (see 2nd line in constructor).
   2. Attach the bound function to `onChange` events.
 
-## Example
+### Example
 
 ```js
 import React from 'react'
@@ -62,25 +62,25 @@ class Form extends React.Component {
 }
 ```
 
-# Documentation
+## Documentation
 
 **React-input-handler** a single function which accept an event as unique argument.
 
 The objective is simple: handle input changes and persist them into the component's state.
 
-# Development
+## Development
 
   1. Clone and fork this repo.
   2. Install dependencies running: `yarn` or `npm install`.
   3. [Run tests](#test).
   4. Prepare a pull request.
 
-## Test
+### Test
 
   - `yarn test` - to run all tests.
   - `yarn test -- --watch` to run all tests in watch mode.
 
-## Publish
+### Publish
 
   1. Bump version: `npm version x.x.x -m 'Version %s.'`.
   2. Publish to NPM registry: `npm publish`.
