@@ -6,6 +6,13 @@
 
 </div>
 
+## Features
+
+  - Package size is: 1.18KB (594B gzipped!).
+  - Supports all `<input />`s, checkboxes and `<select />`.
+  - Supports `<select multiple />`.
+  - Multiple bundles: [CJS, ESM and UMD](dist).
+
 ## Installation
 
 ```shell
