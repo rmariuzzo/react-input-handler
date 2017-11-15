@@ -9,9 +9,9 @@
 ## Features
 
   - Package size is: 1.42KB (0.7KB gzipped!).
-  - Supports all `<input />`s, checkboxes and `<select />`.
+  - Supports all `<input />`s, `<textarea />` and `<select />`.
   - Supports `<select multiple />`.
-  - Supports checkboxes with same via [array notation](#array-notation).
+  - Supports checkboxes with same name via [array notation](#array-notation).
   - Multiple bundles: [CJS, ESM and UMD](dist).
 
 ## Installation
