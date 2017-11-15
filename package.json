@@ -1,6 +1,6 @@
 {
   "name": "react-input-handler",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Utility function to handle input changes in React.",
   "main": "dist/react-input-handler.js",
   "module": "dist/react-input-handler.esm.js",
