@@ -74,9 +74,29 @@ class Form extends React.Component {
 
 ## Documentation
 
-**React-input-handler** a single function which accept an event as unique argument.
+**React-input-handler** is a single function which accept an unique argument: an event.
 
 The objective is simple: handle input changes and persist them into the component's state.
+
+### Array notation
+
+By default, **react-input-handler** handles checkbox as boolean value. Sometimes, we may want two or more checkboxes to be handled as an array sharing the same `name` attribute. To achieve this we have to suffix the `name` attribute with `[]`. For example:
+
+**Before:**
+
+```js
+  <input type="checkbox" name="numbers" value="1" onChange={ReactInputHandler.bind(this)} />
+  <input type="checkbox" name="numbers" value="2" onChange={ReactInputHandler.bind(this)} />
+  <input type="checkbox" name="numbers" value="3" onChange={ReactInputHandler.bind(this)} />
+```
+
+**After:**
+
+```js
+  <input type="checkbox" name="numbers[]" value="1" onChange={ReactInputHandler.bind(this)} />
+  <input type="checkbox" name="numbers[]" value="2" onChange={ReactInputHandler.bind(this)} />
+  <input type="checkbox" name="numbers[]" value="3" onChange={ReactInputHandler.bind(this)} />
+```
 
 ## Development
 
