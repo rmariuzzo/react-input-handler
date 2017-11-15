@@ -57,7 +57,7 @@ class Form extends React.Component {
         <textarea type="text" name="bio" onChange={this.inputHandler} />
         
         <label> Are you a developer?</label>
-        <input type="checkbox" name="developer" value="yes" />
+        <input type="checkbox" name="developer" value="yes" onChange={this.inputHandler} />
         
         <button onClick={this.handleSubmit}>Submit</button>
       </form>
