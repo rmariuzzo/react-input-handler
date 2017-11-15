@@ -6,7 +6,6 @@ import React from 'react'
 import Enzyme from 'enzyme'
 import ReactSixteenAdapter from 'enzyme-adapter-react-16'
 
-import InputHandler from '../src/ReactInputHandler'
 import { createForm } from './utils'
 
 Enzyme.configure({ adapter: new ReactSixteenAdapter() })

@@ -23,9 +23,44 @@ function handler(event) {
     throw new Error('all input must have a name prop')
   }
 
-  this.setState({
-    [name]: getValue(target)
-  })
+  // If the name prop ends with `[]` then the prop is an array.
+  const usingArrayNotation = name.substr(-2) === '[]'
+
+  if (usingArrayNotation) {
+    const arrayNotationName = name.substr(0, name.length - 2)
+    const adding = getValue(target)
+    const array = this.state[arrayNotationName] || []
+    const value = target.value
+
+    // Add the target value to the array.
+    if (adding) {
+
+      // Add the new value to the array and persist into the state.
+      if (array.indexOf(value) === -1) {
+        this.setState((prevState) => ({
+          [arrayNotationName]: array.concat(value)
+        }))
+      }
+    } else {
+
+      // Remove the target value from the array.
+      const indexToRemove = array.indexOf(value)
+      if (indexToRemove > -1) {
+        array.splice(indexToRemove, 1)
+      }
+
+      // Persist the changed array into the state.
+      this.setState({
+        [arrayNotationName]: array
+      })
+    }
+  } else {
+
+    // Modify the state.
+    this.setState({
+      [name]: getValue(target)
+    })
+  }
 
 }
 
