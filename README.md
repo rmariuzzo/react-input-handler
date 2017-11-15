@@ -39,11 +39,13 @@ import React from 'react'
 import ReactInputHandler from 'react-input-handler'
 
 class Form extends React.Component {
+
   constructor(props) {
     super(props)
     this.inputHandler = ReactInputHandler.bind(this)
     this.handleSubmit.bind(this)
   }
+
   render() {
     return (
       <form>
@@ -64,8 +66,9 @@ class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     console.log(this.state)
-    // Output: { fullanme: "", bio: "", developer: "" }
+    // Output: { fullanme: "string", bio: "string", developer: true|false }
   }
+
 }
 ```
 
