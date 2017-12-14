@@ -8,10 +8,11 @@
 
 ## Features
 
-  - Package size is: 1.42KB (0.7KB gzipped!).
-  - Supports all `<input />`s, `<textarea />` and `<select />`.
+  - Package size is: **1.54KB** (0.7KB gzipped!).
+  - Supports all `<input />`s, `<textarea />` and `<select />` elements.
   - Supports `<select multiple />`.
   - Supports checkboxes with same name via [array notation](#array-notation).
+  - Play well with deep state traversal using [lodash's set method](https://lodash.com/docs/#set).
   - Multiple bundles: [CJS, ESM and UMD](dist).
 
 ## Installation
@@ -51,13 +52,13 @@ class Form extends React.Component {
     return (
       <form>
         <label>Fullname:</label>
-        <input type="text" name="fullname" onChange={this.inputHandler} />
+        <input type="text" name="user.fullname" onChange={this.inputHandler} />
         
         <label>Biography:</label>
-        <textarea type="text" name="bio" onChange={this.inputHandler} />
+        <textarea type="text" name="user.bio" onChange={this.inputHandler} />
         
         <label> Are you a developer?</label>
-        <input type="checkbox" name="developer" value="yes" onChange={this.inputHandler} />
+        <input type="checkbox" name="user.developer" value="yes" onChange={this.inputHandler} />
         
         <button onClick={this.handleSubmit}>Submit</button>
       </form>
@@ -67,7 +68,7 @@ class Form extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     console.log(this.state)
-    // Output: { fullanme: "string", bio: "string", developer: true|false }
+    // Output: { user: { fullanme: "string", bio: "string", developer: true|false } }
   }
 
 }

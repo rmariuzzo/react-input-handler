@@ -23,4 +23,15 @@ describe('react-input-handler', () => {
     expect(form.state('test')).toBe('hello')
   })
 
+  it('persist <input /> changes into state using deep object traversal', () => {
+    const form = Enzyme.mount(createForm('input', {
+      type: 'text',
+      name: 'a.b.c',
+      value: 'hello'
+    }))
+
+    form.find('input').simulate('change')
+    expect(form.state().a.b.c).toBe('hello')
+  })
+
 })

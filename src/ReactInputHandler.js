@@ -1,7 +1,17 @@
 'use strict'
 
+import set from 'lodash.set'
+
+/**
+ * Export React Input Handler.
+ */
+
 export default handler
 
+/**
+ * The React Input Handler function.
+ * @param {Object} event The event.
+ */
 function handler(event) {
 
   if (!event) {
@@ -50,20 +60,28 @@ function handler(event) {
       }
 
       // Persist the changed array into the state.
-      this.setState({
-        [arrayNotationName]: array
-      })
+      this.setState(prevState => (
+        set(prevState, arrayNotationName, array)
+      ))
     }
   } else {
 
     // Modify the state.
-    this.setState({
-      [name]: getValue(target)
-    })
+    this.setState(prevState => (
+      set(prevState, name, getValue(target))
+    ))
   }
-
 }
 
+/**
+ * Utility functions.
+ */
+
+/**
+ * Return the value of a DOM element.
+ * @param {Object} element The element.
+ * @param {Boolean|String} The DOM element value.
+ */
 function getValue(element) {
   switch(element.type) {
     case 'checkbox':
