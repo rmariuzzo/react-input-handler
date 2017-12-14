@@ -24,7 +24,7 @@ yarn add react-input-handler
 or 
 
 ```shell
-npm install react-inpu-handler --save
+npm install react-input-handler --save
 ```
 
 ## Usage
