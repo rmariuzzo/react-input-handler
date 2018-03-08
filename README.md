@@ -1,3 +1,5 @@
+<br><br><br>
+
 <div align=center>
 
 # react-input-handler
@@ -5,6 +7,8 @@
 ⚡️ Utility function to handle input changes in React based on [React's handling multiple input docs](https://reactjs.org/docs/forms.html#handling-multiple-inputs).
 
 </div>
+
+<br><br><br>
 
 ## Features
 
