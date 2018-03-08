@@ -11,8 +11,9 @@ export default handler
 /**
  * The React Input Handler function.
  * @param {Object} event The event.
+ * @param {Function} callback The callback function.
  */
-function handler(event) {
+function handler(event, callback) {
 
   if (!event) {
     throw new Error('event must be defined')
@@ -24,6 +25,10 @@ function handler(event) {
 
   if (typeof this.setState !== 'function') {
     throw new Error('react-input-handler must be bound to the component instance')
+  }
+
+  if (typeof callback === 'undefined' && typeof callback !== 'function') {
+    throw new Error('the 2nd argument of react-input-handler must be a function')
   }
 
   const target = event.target
@@ -62,14 +67,14 @@ function handler(event) {
       // Persist the changed array into the state.
       this.setState(prevState => (
         set(prevState, arrayNotationName, array)
-      ))
+      ), callback)
     }
   } else {
 
     // Modify the state.
     this.setState(prevState => (
       set(prevState, name, getValue(target))
-    ))
+    ), callback)
   }
 }
 

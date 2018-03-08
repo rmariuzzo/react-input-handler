@@ -8,7 +8,7 @@
 
 ## Features
 
-  - Package size is: **1.54KB** (0.7KB gzipped!).
+  - Package size is: **1.66KB** (0.8KB gzipped!).
   - Supports all `<input />`s, `<textarea />` and `<select />` elements.
   - Supports `<select multiple />`.
   - Supports checkboxes with same name via [array notation](#array-notation).
@@ -44,7 +44,7 @@ class Form extends React.Component {
 
   constructor(props) {
     super(props)
-    this.inputHandler = ReactInputHandler.bind(this)
+    this.handleChange = ReactInputHandler.bind(this)
     this.handleSubmit.bind(this)
   }
 
@@ -52,7 +52,7 @@ class Form extends React.Component {
     return (
       <form>
         <label>Fullname:</label>
-        <input type="text" name="user.fullname" onChange={this.inputHandler} />
+        <input type="text" name="user.fullname" onChange={this.handleChange} />
         
         <label>Biography:</label>
         <textarea type="text" name="user.bio" onChange={this.inputHandler} />
@@ -76,7 +76,7 @@ class Form extends React.Component {
 
 ## Documentation
 
-**React-input-handler** is a single function which accept an unique argument: an event.
+**React-input-handler** is a single function which accept two argument: an event and a optional callback function that will be passed to the `setState` method.
 
 The objective is simple: handle input changes and persist them into the component's state.
 
