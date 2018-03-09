@@ -27,7 +27,7 @@ function handler(event, callback) {
     throw new Error('react-input-handler must be bound to the component instance')
   }
 
-  if (typeof callback === 'undefined' && typeof callback !== 'function') {
+  if (typeof callback !== 'undefined' && typeof callback !== 'function') {
     throw new Error('the 2nd argument of react-input-handler must be a function')
   }
 
