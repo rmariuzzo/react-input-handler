@@ -44,27 +44,30 @@ Two things needs to be done to use **react-input-handler**:
 import React from 'react'
 import ReactInputHandler from 'react-input-handler'
 
-class Form extends React.Component {
+export default class Form extends React.Component {
 
   constructor(props) {
     super(props)
+
+    this.state = {}
+
     this.handleChange = ReactInputHandler.bind(this)
-    this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>Fullname:</label>
         <input type="text" name="user.fullname" onChange={this.handleChange} />
-        
+
         <label>Biography:</label>
-        <textarea type="text" name="user.bio" onChange={this.inputHandler} />
-        
+        <textarea type="text" name="user.bio" onChange={this.handleChange} />
+
         <label> Are you a developer?</label>
-        <input type="checkbox" name="user.developer" value="yes" onChange={this.inputHandler} />
-        
-        <button onClick={this.handleSubmit}>Submit</button>
+        <input type="checkbox" name="user.developer" value="yes" onChange={this.handleChange} />
+
+        <button type="submit">Submit</button>
       </form>
     )
   }
@@ -74,7 +77,6 @@ class Form extends React.Component {
     console.log(this.state)
     // Output: { user: { fullanme: "string", bio: "string", developer: true|false } }
   }
-
 }
 ```
 
